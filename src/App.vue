@@ -11,35 +11,7 @@
       <div class="mb-8">
         <router-view />
       </div>
-
-      <div class="pt-6 border-t border-gray-100">
-        <button
-          @click="copyReferralLink"
-          class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition duration-200 shadow-md"
-        >
-          一键复制我的推广链接
-        </button>
-
-        <p v-if="copied" class="mt-3 text-center text-green-600 font-medium animate-pulse">
-          ✓ 链接已复制到剪贴板！
-        </p>
-      </div>
-
     </div>
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const userId = "USER_888";
-const copied = ref(false);
-
-const copyReferralLink = () => {
-  const referralLink = `${window.location.origin}/?ref=${userId}`;
-  navigator.clipboard.writeText(referralLink).then(() => {
-    copied.value = true;
-    setTimeout(() => { copied.value = false; }, 2000);
-  });
-};
-</script>
