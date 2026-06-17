@@ -1,0 +1,13 @@
+vuedemo/
+├── index.html
+├── package.json
+├── vite.config.js
+├── src/
+│   ├── main.js
+│   ├── App.vue
+│   ├── router/
+│   │   └── index.js
+│   ├── views/
+│   │   ├── Home.vue
+│   │   └── Dashboard.vue
+│   └── assets/
